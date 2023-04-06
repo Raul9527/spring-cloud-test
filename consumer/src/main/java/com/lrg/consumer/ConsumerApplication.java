@@ -7,9 +7,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
 @EnableDiscoveryClient
-@SpringBootApplication
+@SpringBootApplication//标注这个为该项目的启动入口
 @EnableFeignClients
 @EnableCircuitBreaker
+//@EnableDubbo(scanBasePackages = {})
 public class ConsumerApplication {
 	public static void main(String[] args){
 		SpringApplication.run(ConsumerApplication.class,args);

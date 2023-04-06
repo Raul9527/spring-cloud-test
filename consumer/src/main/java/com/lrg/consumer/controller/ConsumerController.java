@@ -11,8 +11,16 @@ public class ConsumerController {
 	@Autowired
 	HelloRemote HelloRemote;
 
+	@Autowired
+	com.lrg.api.controller.ConsumerController consumerController;
+
 	@RequestMapping("/hello/{name}")
 	public String index(@PathVariable("name") String name) {
 		return HelloRemote.hello(name);
+	}
+
+	@RequestMapping("/name/{name}")
+	public String getName(@PathVariable("name") String name) {
+		return consumerController.getName(name);
 	}
 }
